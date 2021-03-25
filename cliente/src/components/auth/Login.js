@@ -61,10 +61,11 @@ const Login = (props) => {
             { alerta ? ( <div className={`alerta ${alerta.categoria}`}>{alerta.msg}</div>)  : null }
 
             <div className="contenedor-form sombra-dark">
-                <h1>Iniciar Sesión</h1>
+                <h1 data-cy="titulo">Iniciar Sesión</h1>
 
                 <form
                     onSubmit={onSubmit}
+                    data-cy="form-login"
                 >
                     <div className="campo-form">
                         <label htmlFor="email">Email</label>
