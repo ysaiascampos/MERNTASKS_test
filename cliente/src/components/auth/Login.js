@@ -70,7 +70,7 @@ const Login = (props) => {
                     <div className="campo-form">
                         <label htmlFor="email">Email</label>
                         <input 
-
+                            data-cy="email-input"
                             type="email"
                             id="email"
                             name="email"
@@ -83,6 +83,7 @@ const Login = (props) => {
                     <div className="campo-form">
                         <label htmlFor="password">Password</label>
                         <input
+                            data-cy="password-input"
                             type="password"
                             id="password"
                             name="password"
@@ -94,13 +95,15 @@ const Login = (props) => {
 
                     <div className="campo-form">
                         <input
+                            data-cy="btn-submit"
                             type="submit" 
                             className="btn btn-primario btn-block" 
                             value="Iniciar Sesión" />
                     </div>
                 </form>
 
-                <Link to={'/nueva-cuenta'} className="enlace-cuenta">
+                <Link data-cy="nueva-cuenta"
+                     to={'/nueva-cuenta'} className="enlace-cuenta">
                     Obtener Cuenta
                 </Link>
             </div>
