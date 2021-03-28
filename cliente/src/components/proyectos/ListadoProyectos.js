@@ -3,6 +3,7 @@ import Proyecto from './Proyecto';
 import proyectoContext from '../../context/proyectos/proyectoContext';
 import AlertaContext from '../../context/alertas/alertaContext';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
+import Alerta from '../layout/Alerta'
 
 const ListadoProyectos = () => {
 
@@ -29,11 +30,8 @@ const ListadoProyectos = () => {
 
     return ( 
 
-        <ul className="listado-proyectos">
-            
-        
-            { alerta   ? ( <div className={`alerta ${alerta.categoria} `}>{alerta.msg}</div>  ) : null  }
-
+        <ul data-cy="listado-proyectos" className="listado-proyectos">
+            <Alerta alerta={alerta} />
 
             <TransitionGroup>
                 {proyectos.map(proyecto => (

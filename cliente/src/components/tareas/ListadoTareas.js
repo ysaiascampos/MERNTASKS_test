@@ -15,7 +15,7 @@ const ListadoTareas = () => {
     const { tareasproyecto } = tareasContext;
 
     // Si no hay proyecto seleccionado
-    if(!proyecto) return <h2>Selecciona un proyecto</h2>;
+    if(!proyecto) return <h2 data-cy="seleciona">Selecciona un proyecto</h2>;
 
     // Array destructuring para extraer el proyecto actual
     const [proyectoActual] =  proyecto;
@@ -49,7 +49,8 @@ const ListadoTareas = () => {
                 }
             </ul>
 
-            <button     
+            <button  
+                data-cy="btn-eliminar-proyecto"   
                 type="button"
                 className="btn btn-eliminar"
                 onClick={onClickEliminar}

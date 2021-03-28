@@ -2,6 +2,7 @@ import React, { useState, useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import AlertaContext from '../../context/alertas/alertaContext';
 import AuthContext from '../../context/autenticacion/authContext';
+import Alerta from '../layout/Alerta';
 
 const NuevaCuenta = (props) => {
 
@@ -79,12 +80,13 @@ const NuevaCuenta = (props) => {
 
     return ( 
         <div className="form-usuario">
-            { alerta ? ( <div className={`alerta ${alerta.categoria}`}>{alerta.msg}</div> )  : null }
+            <Alerta alerta={alerta} />
             <div className="contenedor-form sombra-dark">
-                <h1>Obtener una cuenta</h1>
+                <h1 data-cy="titulo-cuenta">Obtener una cuenta</h1>
 
                 <form
                     onSubmit={onSubmit}
+                    data-cy="form-cuenta"
                 >
                     <div className="campo-form">
                         <label htmlFor="nombre">Nombre</label>
@@ -95,6 +97,7 @@ const NuevaCuenta = (props) => {
                             placeholder="Tu Nombre"
                             value={nombre}
                             onChange={onChange}
+                            data-cy="nombre-input"
                         />
                     </div>
 
@@ -107,6 +110,7 @@ const NuevaCuenta = (props) => {
                             placeholder="Tu Email"
                             value={email}
                             onChange={onChange}
+                            data-cy="email-input"
                         />
                     </div>
 
@@ -119,6 +123,7 @@ const NuevaCuenta = (props) => {
                             placeholder="Tu Password"
                             value={password}
                             onChange={onChange}
+                            data-cy="password-input"
                         />
                     </div>
 
@@ -131,6 +136,7 @@ const NuevaCuenta = (props) => {
                             placeholder="Repite tu Password"
                             value={confirmar}
                             onChange={onChange}
+                            data-cy="confirmar-input"
                         />
                     </div>
 
@@ -139,11 +145,12 @@ const NuevaCuenta = (props) => {
                             type="submit" 
                             className="btn btn-primario btn-block" 
                             value="Registrarme" 
+                            data-cy="submit-input"
                         />
                     </div>
                 </form>
 
-                <Link to={'/'} className="enlace-cuenta">
+                <Link data-cy="enlace-login" to={'/'} className="enlace-cuenta">
                     Volver a Iniciar Sesión
                 </Link>
             </div>
